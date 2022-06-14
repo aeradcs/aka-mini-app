@@ -39,7 +39,7 @@ async function loadTab() {
     let response;
     let paths = [];
     let dates = [];
-    await makeRequest("http://127.0.0.1:8000/paths/", "GET", undefined).then((data) => {
+    await makeRequest("http://84.237.87.18:7710/paths/", "GET", undefined).then((data) => {
         response = data.replace(/'/g, "\"");
         let obj = JSON.parse(response);
         console.log("JS: response " + response);
@@ -105,15 +105,15 @@ async function runTask() {
         console.log("JS: generatePythonScript done");
 
         // submit job on hpc
-        await makeRequest("http://127.0.0.1:8000/jobs/", "POST", "")
+        await makeRequest("http://84.237.87.18:7710/jobs/", "POST", "")
         console.log("JS: submitJob done");
 
         // load results -- pngs names
         let response;
-        await makeRequest("http://127.0.0.1:8000/jobs/0/", "GET", undefined).then((data) => {
+        await makeRequest("http://84.237.87.18:7710/jobs/0/", "GET", undefined).then((data) => {
             response = data;
             // change GUI to display job completing
-            if (response.split("\n")[1].split("|")[0] !== "") {
+            if (response !== undefined && response.split("\n")[1].split("|")[0] !== "") {
                 pngsNames.value = response.split("\n")[1].split("|")[0] + "|" + response.split("\n")[2].split("|")[0]
             } else {
                 pngsNames.value = "Для этого файла не получилось построить изображения PSD"
@@ -123,7 +123,7 @@ async function runTask() {
         console.log("JS: loadImgNames done");
 
         // clear service context
-        await makeRequest("http://127.0.0.1:8000/jobs/0/vars/", "DELETE", "");
+        await makeRequest("http://84.237.87.18:7710/jobs/0/vars/", "DELETE", "");
         console.log("JS: clearVars done");
 
         // change GUI to display job completing
@@ -174,8 +174,8 @@ async function generatePythonScript(fname) {
 
     let path = "/home/fano.icmmg/gorodnichev_m_a/transfer/disk1/Milakhina/" + fname
 
-    let varsUrl = "http://127.0.0.1:8000/jobs/0/vars/"
-    let opsUrl = "http://127.0.0.1:8000/jobs/0/operations/"
+    let varsUrl = "http://84.237.87.18:7710/jobs/0/vars/"
+    let opsUrl = "http://84.237.87.18:7710/jobs/0/operations/"
 
     await makeRequest(varsUrl, 'POST', JSON.stringify({
         'varname': 'filename',
@@ -322,7 +322,7 @@ async function generatePythonScript(fname) {
 }
 
 async function getPngRequest(pngName, htmlElemName) {
-    fetch('http://127.0.0.1:8000/images/' + pngName)
+    fetch('http://84.237.87.18:7710/images/' + pngName)
         .then(res => {
             return res.blob()
         })
@@ -342,6 +342,7 @@ async function showPsdImgs() {
     }
 }
 
-
+// 127.0.0.1:8000
+// 84.237.87.18:7710
 
 
