@@ -1,0 +1,21 @@
+.auto-line-break {
+    word-break: break-word;
+}
+
+.row-height {
+    height: 84vh;
+}
+
+.row-height-second {
+    height: 89vh;
+}
+
+.left {
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.right {
+    height: 100%;
+    overflow-y: scroll;
+}
