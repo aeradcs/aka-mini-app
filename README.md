@@ -1,4 +1,10 @@
-# aka-mini-app install
+# Aka Mini App preview
+
+<img src="https://user-images.githubusercontent.com/43800886/174640586-10cfdddb-4278-4d6f-b8c3-ace93bb111b4.png">
+
+<img src="https://user-images.githubusercontent.com/43800886/174641106-daf0fa8c-b25a-4258-a11b-2851130b2171.png">
+
+# Aka Mini App install
 
 1.      git clone https://gitlab.ssd.sscc.ru/e.nalepova/aka-mini-app.git 
 2.      cd aka-mini-app
