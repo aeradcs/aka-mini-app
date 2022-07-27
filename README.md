@@ -8,7 +8,7 @@
 
 1.      git clone https://github.com/aeradcs/aka-mini-app.git 
 2.      cd aka-mini-app
-3.      В файле app.js нужно поменять ip-адрес и порт 84.237.87.18:7710 на ip-адрес и порт, на котором у вас работает сервис выполнения операций - https://github.com/aeradcs/aka-service-api.
+3.      В файле app.js нужно поменять ip-адрес и порт 84.237.87.18:7710 на ip-адрес и порт, на котором у вас работает сервис выполнения операций - https://github.com/aeradcs/aka-service.git.
 3.      открыть app.html
     Если возникает ошибка “_Access has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource._”   при попытке сделать что-либо на странице, то для решения проблемы можно выполнить команду (подходит для windows 10):
 
