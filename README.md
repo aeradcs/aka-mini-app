@@ -6,7 +6,7 @@
 
 # Aka Mini App | installation
 
-1.      git clone https://gitlab.ssd.sscc.ru/e.nalepova/aka-mini-app.git 
+1.      git clone https://github.com/aeradcs/aka-mini-app.git 
 2.      cd aka-mini-app
 3.      В файле app.js нужно поменять ip-адрес и порт 84.237.87.18:7710 на ip-адрес и порт, на котором у вас работает сервис выполнения операций - https://github.com/aeradcs/aka-service-api.
 3.      открыть app.html
